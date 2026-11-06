@@ -1,0 +1,89 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+public class ExceptionHandler {
+
+    public static void main(String[] args) {
+        
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print("Enter input file name: ");
+        String fileName = keyboard.nextLine();
+
+        try {
+
+            Scanner input = new Scanner(new File(fileName));
+
+            int count = input.nextInt();
+
+            double sum = 0;
+
+            for (int i = 0; i < count; i++) {
+                double value = input.nextDouble();
+                sum += value;
+            }
+
+            double average = sum / count;
+
+            System.out.println("Count: " + count);
+            System.out.println("Sum: " + sum);
+            System.out.println("Average: " + average);
+
+            input.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Error: File requested not found.");
+        }
+        catch (NoSuchElementException e) {
+            System.out.println("Error: Invalid or missing data in requested file.");
+        }
+
+        keyboard.close();
+    }
+}import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+public class ExceptionHandler {
+
+    public static void main(String[] args) {
+        
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print("Enter input file name: ");
+        String fileName = keyboard.nextLine();
+
+        try {
+
+            Scanner input = new Scanner(new File(fileName));
+
+            int count = input.nextInt();
+
+            double sum = 0;
+
+            for (int i = 0; i < count; i++) {
+                double value = input.nextDouble();
+                sum += value;
+            }
+
+            double average = sum / count;
+
+            System.out.println("Count: " + count);
+            System.out.println("Sum: " + sum);
+            System.out.println("Average: " + average);
+
+            input.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Error: File requested not found.");
+        }
+        catch (NoSuchElementException e) {
+            System.out.println("Error: Invalid or missing data in requested file.");
+        }
+
+        keyboard.close();
+    }
+}
